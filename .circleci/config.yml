@@ -159,6 +159,7 @@ workflows:
           #       - staging
           #       - master
       - build-deploy-staging:
+          context: "Serverless Framework"
           requires:
             - assume-role-staging
           # filters:
@@ -181,6 +182,7 @@ workflows:
             branches:
               only: master
       - build-deploy-production:
+          context: "Serverless Framework"
           requires:
             - assume-role-production
           filters:
