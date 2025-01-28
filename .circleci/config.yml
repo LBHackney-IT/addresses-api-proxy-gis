@@ -7,10 +7,10 @@ orbs:
 executors:
   node-executor:
     docker:
-      - image: circleci/node:14.15.5-browsers
+      - image: cimg/node:20.18.2-browsers
   docker-python:
     docker:
-      - image: circleci/python:3.7
+      - image: cimg/python:3.7
 
 references:
   workspace_root: &workspace_root '~'
