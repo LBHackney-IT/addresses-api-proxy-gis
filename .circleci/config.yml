@@ -136,12 +136,12 @@ workflows:
   version: 2
   continuous-delivery:
     jobs:
-      - install-dependencies:
-          filters:
-            branches:
-              only:
-                - staging
-                - master
+      - install-dependencies
+          # filters:
+          #   branches:
+          #     only:
+          #       - staging
+          #       - master
       # - tests:
       #     requires:
       #       - install-dependencies
@@ -153,19 +153,19 @@ workflows:
           requires:
             - install-dependencies
           #   - e2e
-          filters:
-            branches:
-              only: 
-                - staging
-                - master
+          # filters:
+          #   branches:
+          #     only: 
+          #       - staging
+          #       - master
       - build-deploy-staging:
           requires:
             - assume-role-staging
-          filters:
-            branches:
-              only: 
-                - staging
-                - master
+          # filters:
+          #   branches:
+          #     only: 
+          #       - staging
+          #       - master
       - permit-deploy-production:
           type: approval
           requires:
